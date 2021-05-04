@@ -1,0 +1,2523 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Team Exchange API Reference</title>
+
+    <style media="screen">
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cpf {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s, .highlight .sa, .highlight .dl {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf, .highlight .fm {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv, .highlight .vm {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #f92672;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition:none!important;
+        transition:none!important;
+      }
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #586e75;
+}
+.highlight .err {
+  color: #002b36;
+  background-color: #dc322f;
+}
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cpf, .highlight .c1, .highlight .cs {
+  color: #657b83;
+}
+.highlight .cp {
+  color: #b58900;
+}
+.highlight .nt {
+  color: #b58900;
+}
+.highlight .o, .highlight .ow {
+  color: #93a1a1;
+}
+.highlight .p, .highlight .pi {
+  color: #93a1a1;
+}
+.highlight .gi {
+  color: #859900;
+}
+.highlight .gd {
+  color: #dc322f;
+}
+.highlight .gh {
+  color: #268bd2;
+  background-color: #002b36;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #6c71c4;
+}
+.highlight .kc {
+  color: #cb4b16;
+}
+.highlight .kt {
+  color: #cb4b16;
+}
+.highlight .kd {
+  color: #cb4b16;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #859900;
+}
+.highlight .sa {
+  color: #6c71c4;
+}
+.highlight .sr {
+  color: #2aa198;
+}
+.highlight .si {
+  color: #d33682;
+}
+.highlight .se {
+  color: #d33682;
+}
+.highlight .nn {
+  color: #b58900;
+}
+.highlight .nc {
+  color: #b58900;
+}
+.highlight .no {
+  color: #b58900;
+}
+.highlight .na {
+  color: #268bd2;
+}
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx {
+  color: #859900;
+}
+.highlight .ss {
+  color: #859900;
+}
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all-a9fde460.js"></script>
+
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-96983465.png" class="logo" alt="" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#public" class="toc-h1 toc-link" data-title="Public">Public</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#health" class="toc-h2 toc-link" data-title="Health">Health</a>
+                  </li>
+                  <li>
+                    <a href="#constants" class="toc-h2 toc-link" data-title="Constants">Constants</a>
+                  </li>
+                  <li>
+                    <a href="#kit" class="toc-h2 toc-link" data-title="Kit">Kit</a>
+                  </li>
+                  <li>
+                    <a href="#tiers" class="toc-h2 toc-link" data-title="Tiers">Tiers</a>
+                  </li>
+                  <li>
+                    <a href="#ticker" class="toc-h2 toc-link" data-title="Ticker">Ticker</a>
+                  </li>
+                  <li>
+                    <a href="#tickers" class="toc-h2 toc-link" data-title="Tickers">Tickers</a>
+                  </li>
+                  <li>
+                    <a href="#orderbook" class="toc-h2 toc-link" data-title="Orderbook">Orderbook</a>
+                  </li>
+                  <li>
+                    <a href="#orderbooks" class="toc-h2 toc-link" data-title="Orderbooks">Orderbooks</a>
+                  </li>
+                  <li>
+                    <a href="#trades" class="toc-h2 toc-link" data-title="Trades">Trades</a>
+                  </li>
+                  <li>
+                    <a href="#chart" class="toc-h2 toc-link" data-title="Chart">Chart</a>
+                  </li>
+                  <li>
+                    <a href="#charts" class="toc-h2 toc-link" data-title="Charts">Charts</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#private" class="toc-h1 toc-link" data-title="Private">Private</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-user" class="toc-h2 toc-link" data-title="Get User">Get User</a>
+                  </li>
+                  <li>
+                    <a href="#get-balance" class="toc-h2 toc-link" data-title="Get Balance">Get Balance</a>
+                  </li>
+                  <li>
+                    <a href="#get-deposits" class="toc-h2 toc-link" data-title="Get Deposits">Get Deposits</a>
+                  </li>
+                  <li>
+                    <a href="#get-withdrawals" class="toc-h2 toc-link" data-title="Get Withdrawals">Get Withdrawals</a>
+                  </li>
+                  <li>
+                    <a href="#get-withdrawal-fee" class="toc-h2 toc-link" data-title="Get Withdrawal Fee">Get Withdrawal Fee</a>
+                  </li>
+                  <li>
+                    <a href="#create-withdrawal-request" class="toc-h2 toc-link" data-title="Create Withdrawal Request">Create Withdrawal Request</a>
+                  </li>
+                  <li>
+                    <a href="#get-trades" class="toc-h2 toc-link" data-title="Get Trades">Get Trades</a>
+                  </li>
+                  <li>
+                    <a href="#get-all-orders" class="toc-h2 toc-link" data-title="Get All Orders">Get All Orders</a>
+                  </li>
+                  <li>
+                    <a href="#get-order" class="toc-h2 toc-link" data-title="Get Order">Get Order</a>
+                  </li>
+                  <li>
+                    <a href="#create-order" class="toc-h2 toc-link" data-title="Create Order">Create Order</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-all-orders" class="toc-h2 toc-link" data-title="Cancel All Orders">Cancel All Orders</a>
+                  </li>
+                  <li>
+                    <a href="#cancel-order" class="toc-h2 toc-link" data-title="Cancel Order">Cancel Order</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#tradingview" class="toc-h1 toc-link" data-title="TradingView">TradingView</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#config" class="toc-h2 toc-link" data-title="Config">Config</a>
+                  </li>
+                  <li>
+                    <a href="#history" class="toc-h2 toc-link" data-title="History">History</a>
+                  </li>
+                  <li>
+                    <a href="#symbols" class="toc-h2 toc-link" data-title="Symbols">Symbols</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#websocket" class="toc-h1 toc-link" data-title="Websocket">Websocket</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#connecting" class="toc-h2 toc-link" data-title="Connecting">Connecting</a>
+                  </li>
+                  <li>
+                    <a href="#sending-receiving-messages" class="toc-h2 toc-link" data-title="Sending/Receiving Messages">Sending/Receiving Messages</a>
+                  </li>
+                  <li>
+                    <a href="#public-events" class="toc-h2 toc-link" data-title="Public Events">Public Events</a>
+                  </li>
+                  <li>
+                    <a href="#public-updates" class="toc-h2 toc-link" data-title="Public Updates">Public Updates</a>
+                  </li>
+                  <li>
+                    <a href="#private-events" class="toc-h2 toc-link" data-title="Private Events">Private Events</a>
+                  </li>
+                  <li>
+                    <a href="#private-updates" class="toc-h2 toc-link" data-title="Private Updates">Private Updates</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://trade.team-exchange.com/account/developers'>Sign Up for a Developer Key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<blockquote>
+<p>All shell commands are CURL. You can read more about CURL <a href="https://curl.haxx.se/">here</a>.</p>
+</blockquote>
+
+<p>Team Exchange provides a complete RESTful API for developers which allows full access to all the functionalities on the exchange. Team Exchange also support websocket for real-time updates.</p>
+
+<p>These endpoints are categorized into public and private. Public endpoints allow you to access public information such as price ticker, orderbook etc while private endpoints require authentication and allow you to get your balance, active orders as well as placing orders.</p>
+
+<p>We have language bindings in Shell with CURL and you can view code examples in the dark area on the right.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># With shell, you can just pass the correct header with each request</span>
+curl <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"api_endpoint_here"</span>
+</code></pre></div>
+<blockquote>
+<p>Make sure to replace <code>$API_KEY</code>, <code>$API_SIGNATURE</code>, and <code>$API_EXPIRES</code> with your own key, signature, and expires values.</p>
+</blockquote>
+
+<p>Team Exchange uses HMAC-SHA256 authentication for private user access to the API. HMAC-SHA256 takes a string and secret key (your <code>api-secret</code>) and outputs an encoded signature (your <code>api-signature</code>). The string being encoded should follow the format <code>${METHOD}${PATH}${api-expires}</code>, where <code>METHOD</code> is the HTTP method of the request, <code>PATH</code> is the path of the request, and <code>api-expires</code> is a unix timestamp indicating when the request expires. If the request includes a body, the JSON body object should be appended to the string being encoded e.g. <code>${METHOD}${PATH}${api-expires}${JSON_BODY}</code>. You can use an online <a href="https://www.freeformatter.com/hmac-generator.html">HMAC generator</a> to generate the signature.</p>
+
+<p>Examples of strings being encoded:</p>
+
+<ul>
+<li><code>GET</code> request to <code>https://api.team-exchange.com/v2/user/balance</code> that expires at <code>1575516146</code>
+
+<ul>
+<li><code>GET/v2/user/balance1575516146</code></li>
+</ul></li>
+<li><code>POST</code> request to <code>https://api.team-exchange.com/v2/order</code> that expires at <code>1575516146</code> with body <code>{&quot;symbol&quot;:&quot;btc-usdt&quot;,&quot;side&quot;:&quot;buy&quot;,&quot;size&quot;:0.001,&quot;type&quot;:&quot;market&quot;}</code>
+
+<ul>
+<li><code>POST/v2/order1583284849{&quot;symbol&quot;:&quot;btc-usdt&quot;,&quot;side&quot;:&quot;buy&quot;,&quot;size&quot;:0.001,&quot;type&quot;:&quot;market&quot;}</code></li>
+</ul></li>
+</ul>
+
+<p>You can register for a new Team Exchange <code>api-key</code> and <code>api-secret</code> in the <a href="https://trade.team-exchange.com/api">security section</a> of team-exchange.com.</p>
+
+<p>Team Exchange expects <code>api-key</code>, <code>api-signature</code>, and <code>api-expires</code> to be included in all Private API requests to the server in the request header with the following format:</p>
+<div class="highlight"><pre class="highlight plaintext"><code>api-key: &lt;API_KEY&gt;
+api-signature: &lt;API_SIGNATURE&gt;
+api-expires: &lt;API_EXPIRES&gt;
+</code></pre></div>
+<aside class="notice">
+You must replace <code>API_KEY</code>, <code>API_SIGNATURE</code>, and <code>API_EXPIRES</code> with your own values.
+</aside>
+<h1 id='public'>Public</h1><h2 id='health'>Health</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/health"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Exchange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"api.team-exchange.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"basePath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"/v2"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves the exchange&#39;s basic information and checks its health.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/health</code></p>
+<h2 id='constants'>Constants</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/constants"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"coins"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"USD Tether"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"allow_deposit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"allow_withdrawal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdrawal_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"increment_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03T10:19:10.857Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03T10:19:10.857Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"estimated_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blockchain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"standard"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"TEAM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fullname"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Exchange"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"allow_deposit"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"allow_withdrawal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"withdrawal_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"min"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"max"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"increment_unit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03T10:19:10.857Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03T10:19:10.857Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"logo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"estimated_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"blockchain"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"network"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"standard"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"pairs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pair_base"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"pair_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"min_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"max_size"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"min_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"max_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000000</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"increment_size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"increment_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.01</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"is_public"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"estimated_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03T10:19:10.846Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-02-03T10:19:10.846Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves system information for coins and pairs.</p>
+<h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/constants</code></p>
+<h2 id='kit'>Kit</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/kit"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"color"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"icons"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"links"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Exchange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"captcha"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"site_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"strings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"api_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Exchange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"defaults"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dark"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"features"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+    </span><span class="nl">"interface"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"full"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"logo_image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://bitholla.s3.ap-northeast-2.amazonaws.com/exchange/Team Exchangeexchange/EXCHANGE_LOGO__dark___1618096610149.png"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Exchange Exchange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"native_currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"setup_completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"valid_languages"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en,fa,ko,ar,pt,ja,ru"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"new_user_is_activated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email_verification_required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Exchange"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://api.team-exchange.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"is_trial"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-05T06:46:27.272Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expiry"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-04T06:46:27.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"collateral_level"</span><span class="p">:</span><span class="w"> </span><span class="s2">"member"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"initialized"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves system kit configurations for the client.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/kit</code></p>
+<h2 id='tiers'>Tiers</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/tiers"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Base Trader"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"basic tier"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawal_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"xmr-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eth-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"btc-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eth-btc"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"xmr-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eth-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"btc-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eth-btc"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-28T02:00:57.128Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-13T15:42:30.615Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VIP Trader"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"icon"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"vip tier"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"deposit_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"withdrawal_limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fees"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"xmr-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eth-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"btc-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eth-btc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"xmr-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eth-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"btc-usdt"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"eth-btc"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-28T02:01:12.299Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-01-07T08:21:15.300Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves system tier levels for users.</p>
+<h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/tiers</code></p>
+<h2 id='ticker'>Ticker</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/ticker?symbol=TEAM-usdt"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves ticker information for a pair.</p>
+<h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/ticker?symbol=${symbol}</code></p>
+<h3 id='parameters'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Required</td>
+<td>The currency pair symbol (TEAM-usdt)</td>
+</tr>
+</tbody></table>
+<h2 id='tickers'>Tickers</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/tickers"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"last"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.54</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves ticker information for all pairs.</p>
+<h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/tickers</code></p>
+<h2 id='orderbook'>Orderbook</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/orderbook?symbol=TEAM-usdt"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.212</span><span class="p">,</span><span class="mi">8</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.21</span><span class="p">,</span><span class="mi">5</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.208</span><span class="p">,</span><span class="mi">15</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.206</span><span class="p">,</span><span class="mi">583</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.205</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.204</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.203</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.202</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.201</span><span class="p">,</span><span class="mi">1000</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.2</span><span class="p">,</span><span class="mi">1000</span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.23</span><span class="p">,</span><span class="mi">45</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.24</span><span class="p">,</span><span class="mi">824</span><span class="p">],</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.248</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-02T21:36:29.395Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves 10 level bids and 10 level asks of the orderbook for a symbol.</p>
+<h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/orderbook?symbol=${symbol}</code></p>
+<h3 id='parameters-2'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Required</td>
+<td>The currency pair symbol (TEAM-usdt, etc.)</td>
+</tr>
+</tbody></table>
+<h2 id='orderbooks'>Orderbooks</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/orderbooks"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-02T21:36:29.395Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"btc-usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-02T21:36:29.395Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves 10 level bids and 10 level asks of the orderbook for all symbols.</p>
+<h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/orderbooks</code></p>
+<h2 id='trades'>Trades</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/trades?symbol=TEAM-usdt"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-23T04:00:20.744Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.21</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-23T03:32:38.927Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.23</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-23T03:13:42.361Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves the last 30 trades.</p>
+<h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/trades</code></p>
+<h3 id='parameters-3'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Optional</td>
+<td>The currency pair symbol (TEAM-usdt, etc.)</td>
+</tr>
+</tbody></table>
+<h2 id='chart'>Chart</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/chart?symbol=TEAM-usdt&amp;resolution=1D&amp;from=1551663947&amp;to=1582768007"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.23</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.23</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">13538</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-02T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-03T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.201</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">25982</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a trading pair&#39;s trade history HOLCV.</p>
+<h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/chart?symbol=${symbol}&amp;resolution=${resolution}&amp;from=${from}&amp;to=${to}</code></p>
+<h3 id='parameters-4'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Required</td>
+<td>Symbol to get</td>
+</tr>
+<tr>
+<td>resolution</td>
+<td>string</td>
+<td>Required</td>
+<td>Time interval resolution (1D, 60, etc.)</td>
+</tr>
+<tr>
+<td>from</td>
+<td>string</td>
+<td>Required</td>
+<td>Beginning UNIX timestamp</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>Required</td>
+<td>Ending UNIX timestamp</td>
+</tr>
+</tbody></table>
+<h2 id='charts'>Charts</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/charts?resolution=1D&amp;from=1551663947&amp;to=1582768007"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"TEAM-usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.23</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.23</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">13538</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-02T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">54</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-03T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"close"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"high"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.201</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"low"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"open"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="mi">25982</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"btc-usdt"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves trade history HOLCV for all pairs.</p>
+<h3 id='http-request-11'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/charts?resolution=${resolution}&amp;from=${from}to=${to}</code></p>
+<h3 id='parameters-5'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>resolution</td>
+<td>string</td>
+<td>Required</td>
+<td>Time interval resolution (1D, 60, etc.)</td>
+</tr>
+<tr>
+<td>from</td>
+<td>string</td>
+<td>Required</td>
+<td>Beginning UNIX timestamp</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>Required</td>
+<td>Ending UNIX timestamp</td>
+</tr>
+</tbody></table>
+<h1 id='private'>Private</h1>
+<aside class="notice">
+You must replace <code>API_KEY</code>, <code>API_SIGNATURE</code>, and <code>API_EXPIRES</code> with your own values in the header of all private http requests. Refer to the <a href='#authentication'>authentication section</a> above to learn more.
+</aside>
+<h2 id='get-user'>Get User</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/user"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ragnar@danneskjold.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"full_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ragnar Danneskjold"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"gender"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"nationality"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Norwegian"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"dob"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1957-07-07T12:32:28.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"phone_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Oslo"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"88 Shipping Way"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Norway"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0088"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"id_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"passport"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"999"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"issued_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21T17:32:28.000Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"expiration_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-21T17:32:28.000Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"bank_account"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"crypto_wallet"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"TEAM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"usdt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"verification_level"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"email_verified"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"otp_enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"activated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"narrator"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"affiliation_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"STRING"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"chat"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"set_username"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"risk"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"popup_warning"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_portfolio_percentage"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"audio"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"all"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_placed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"public_trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"click_amounts"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_canceled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quick_trade_success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"quick_trade_timeout"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"get_quote_quick_trade"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_partially_completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"language"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"interface"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"theme"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dark"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_book_levels"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"notification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"popup_order_completed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"popup_order_confirmation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"popup_order_partially_filled"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"affiliation_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"network_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-10-06T11:01:46.715Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T07:48:03.108Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"balance"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"usdt_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"usdt_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TEAM_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TEAM_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T05:48:28.014Z"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint gets user&#39;s information, crypto wallet address as well as his balance.</p>
+<h3 id='http-request-12'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/user</code></p>
+<h2 id='get-balance'>Get Balance</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/user/balance"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"TEAM_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TEAM_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usdt_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"usdt_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-23T04:14:08.705Z"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint gets a user&#39;s balance.</p>
+<h3 id='http-request-13'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/user/balance</code></p>
+<h2 id='get-deposits'>Get Deposits</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/user/deposits"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">229</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dismissed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rejected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deposit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T05:48:28.011Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-16T05:48:28.011Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint displays user&#39;s deposits</p>
+<h3 id='http-request-14'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/user/deposits</code></p>
+<h3 id='parameters-6'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Optional</td>
+<td>The currency pair symbol</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>Optional</td>
+<td>Number of elements to return. Default: 50. Maximun: 100</td>
+</tr>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>Optional</td>
+<td>Page of data to retrieve</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>string</td>
+<td>Optional</td>
+<td>Field to order data</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>Optional</td>
+<td>asc or desc</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>date-time</td>
+<td>Optional</td>
+<td>Starting date of queried data in ISO 8601 format</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>date-time</td>
+<td>Optional</td>
+<td>Ending date of queried data in ISO 8601 format</td>
+</tr>
+<tr>
+<td>format</td>
+<td>string</td>
+<td>Optional</td>
+<td>Pass value csv to download csv file</td>
+</tr>
+</tbody></table>
+<h2 id='get-withdrawals'>Get Withdrawals</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/user/withdrawals"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">224</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"transaction_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"dismissed"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"rejected"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"processing"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"waiting"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"withdrawal"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"currency"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-15T02:36:47.167Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-15T02:36:47.167Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">90</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint displays user&#39;s withdrawals</p>
+<h3 id='http-request-15'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/user/withdrawals</code></p>
+<h3 id='parameters-7'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Optional</td>
+<td>The currency pair symbol (TEAM-usdt)</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>Optional</td>
+<td>Number of elements to return. Default: 50. Maximun: 100</td>
+</tr>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>Optional</td>
+<td>Page of data to retrieve</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>string</td>
+<td>Optional</td>
+<td>Field to order data</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>Optional</td>
+<td>asc or desc</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>date-time</td>
+<td>Optional</td>
+<td>Starting date of queried data in ISO 8601 format</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>date-time</td>
+<td>Optional</td>
+<td>Ending date of queried data i ISO 8601 format</td>
+</tr>
+<tr>
+<td>format</td>
+<td>string</td>
+<td>Optional</td>
+<td>Pass value csv to download csv file</td>
+</tr>
+</tbody></table>
+<h2 id='get-withdrawal-fee'>Get Withdrawal Fee</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/user/withdrawal/fee?symbol=</span><span class="nv">$symbol</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.001</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint gets the withdrawal fee for a certain currency</p>
+<h3 id='http-request-16'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/user/withdrawal/fee?currency=${currency}</code></p>
+<h3 id='parameters-8'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Required</td>
+<td>The desired currency e.g. TEAM</td>
+</tr>
+</tbody></table>
+<h2 id='create-withdrawal-request'>Create Withdrawal Request</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{"currency":$currency,"amount":$amount,"address":$address}'</span>
+  <span class="s2">"https://api.team-exchange.com/v2/user/request-withdrawal"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint creates a withdrawal request for the user</p>
+<h3 id='http-request-17'>HTTP Request</h3>
+<p><code>POST https://api.team-exchange.com/v2/user/request-withdrawal</code></p>
+<h3 id='parameters-9'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>currency</td>
+<td>string</td>
+<td>Required</td>
+<td>The desired currency e.g. TEAM</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>number</td>
+<td>Required</td>
+<td>The amount to withdrawal e.g. 5</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>Required</td>
+<td>The recipient wallet&#39;s address</td>
+</tr>
+</tbody></table>
+<h2 id='get-trades'>Get Trades</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/user/trades"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.15</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-15T07:34:34.203Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint displays user&#39;s trades</p>
+<h3 id='http-request-18'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/user/trades</code></p>
+<h3 id='parameters-10'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Optional</td>
+<td>The currency pair symbol</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>Optional</td>
+<td>Number of elements to return. Default: 50. Maximun: 100</td>
+</tr>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>Optional</td>
+<td>Page of data to retrieve</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>string</td>
+<td>Optional</td>
+<td>Field to order data</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>Optional</td>
+<td>asc or desc</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>date-time</td>
+<td>Optional</td>
+<td>Starting date of queried data in ISO 8601 format</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>date-time</td>
+<td>Optional</td>
+<td>Ending date of queried data in ISO 8601 format</td>
+</tr>
+<tr>
+<td>format</td>
+<td>string</td>
+<td>Optional</td>
+<td>Pass value csv to download csv file</td>
+</tr>
+</tbody></table>
+<h2 id='get-all-orders'>Get All Orders</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/orders"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"filled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T02:32:38.910Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T02:32:38.910Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ragnar@danneskjold.com"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ragnar"</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"exchange_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">176</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint gets all active orders placed by the user</p>
+<h3 id='http-request-19'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/orders</code></p>
+<h3 id='parameters-11'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Optional</td>
+<td>The currency pair symbol</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>Optional</td>
+<td>Side of orders to query (buy, sell)</td>
+</tr>
+<tr>
+<td>status</td>
+<td>string</td>
+<td>Optional</td>
+<td>Status of order (filled, pfilled, canceled, new)</td>
+</tr>
+<tr>
+<td>open</td>
+<td>boolean</td>
+<td>Optional</td>
+<td>Open status of order</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>number</td>
+<td>Optional</td>
+<td>Number of elements to return. Default: 50. Maximun: 100</td>
+</tr>
+<tr>
+<td>page</td>
+<td>number</td>
+<td>Optional</td>
+<td>Page of data to retrieve</td>
+</tr>
+<tr>
+<td>order_by</td>
+<td>string</td>
+<td>Optional</td>
+<td>Field to order data</td>
+</tr>
+<tr>
+<td>order</td>
+<td>string</td>
+<td>Optional</td>
+<td>asc or desc</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>date-time</td>
+<td>Optional</td>
+<td>Starting date of queried data in ISO 8601 format</td>
+</tr>
+<tr>
+<td>end_date</td>
+<td>date-time</td>
+<td>Optional</td>
+<td>Ending date of queried data in ISO 8601 format</td>
+</tr>
+</tbody></table>
+<h2 id='get-order'>Get Order</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/order?</span><span class="nv">$order_id</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">1.09</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T02:32:38.910Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T02:32:38.910Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"User"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ragnar@danneskjold.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ragnar"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"exchange_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">176</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint gets an order by its id.</p>
+<h3 id='http-request-20'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/order?order_id=${order_id}</code></p>
+<h3 id='parameters-12'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_id</td>
+<td>string</td>
+<td>Required</td>
+<td>Order unique Id</td>
+</tr>
+</tbody></table>
+<h2 id='create-order'>Create Order</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> POST
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"Content-Type: application/json"</span>
+  <span class="nt">-d</span> <span class="s1">'{"symbol":$symbol,"side":$side,"size":$size,"type":$type,"price":$price}'</span>
+  <span class="s2">"https://api.team-exchange.com/v2/order"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee_structure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T03:03:19.231Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T03:03:19.231Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint places an order for the user</p>
+<h3 id='http-request-21'>HTTP Request</h3>
+<p><code>POST https://api.team-exchange.com/v2/order</code></p>
+<h3 id='parameters-13'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Required</td>
+<td>The currency pair symbol (TEAM-usdt)</td>
+</tr>
+<tr>
+<td>side</td>
+<td>string</td>
+<td>Required</td>
+<td>buy or sell order</td>
+</tr>
+<tr>
+<td>size</td>
+<td>number</td>
+<td>Required</td>
+<td>The amount of the order</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Required</td>
+<td>limit or market order type</td>
+</tr>
+<tr>
+<td>price</td>
+<td>number</td>
+<td>Required if limit order</td>
+<td>Only should be used when type is limit.</td>
+</tr>
+<tr>
+<td>stop</td>
+<td>number</td>
+<td>Optional</td>
+<td>Stop price of order</td>
+</tr>
+<tr>
+<td>meta</td>
+<td>object</td>
+<td>Optional</td>
+<td>Object with other options such as post_only</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-all-orders'>Cancel All Orders</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> DELETE
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/order/all"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sell"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T03:04:59.607Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T03:05:02.945Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"filled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"usdt"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+        </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fee_structure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint cancels all orders placed by the user.</p>
+<h3 id='http-request-22'>HTTP Request</h3>
+<p><code>DELETE https://api.team-exchange.com/v2/order/all</code></p>
+<h3 id='parameters-14'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Optional</td>
+<td>The currency pair symbol</td>
+</tr>
+</tbody></table>
+<h2 id='cancel-order'>Cancel Order</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET
+  <span class="nt">-H</span> <span class="s2">"api-key: </span><span class="nv">$API_KEY</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-signature: </span><span class="nv">$API_SIGNATURE</span><span class="s2">"</span>
+  <span class="nt">-H</span> <span class="s2">"api-expires: </span><span class="nv">$API_EXPIRES</span><span class="s2">"</span>
+  <span class="s2">"https://api.team-exchange.com/v2/order?order_id=</span><span class="nv">$order_id</span><span class="s2">"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">116</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T03:07:36.244Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-02-17T03:07:52.683Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"filled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"canceled"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+    </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fee_structure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint cancels an order by getting its id</p>
+<h3 id='http-request-23'>HTTP Request</h3>
+<p><code>DELETE https://api.team-exchange.com/v2/order?order_id=${order_id}</code></p>
+<h3 id='parameters-15'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_id</td>
+<td>string</td>
+<td>Required</td>
+<td>Specific order unique Id</td>
+</tr>
+</tbody></table>
+<h1 id='tradingview'>TradingView</h1>
+<p>Team Exchange fully supports the TradingView UDF API.</p>
+<h2 id='config'>Config</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/udf/config"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"supported_resolutions"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"1D"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"supports_group_request"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"supports_marks"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"supports_search"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"supports_timescale_marks"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves the TradingView UDF config.</p>
+<h3 id='http-request-24'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/udf/config</code></p>
+<h2 id='history'>History</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/udf/history?symbol=TEAM-usdt&amp;resolution=1D&amp;from=1551663947&amp;to=1582768007"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"c"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"h"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"l"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"o"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"v"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="err">...</span><span class="p">],</span><span class="w">
+    </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves the TradigView UDF history HOLCV.</p>
+<h3 id='http-request-25'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/udf/history?symbol=${symbol}&amp;resolution=${resolution}&amp;from=${from}&amp;to=${to}</code></p>
+<h3 id='parameters-16'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Required</td>
+<td>The currency pair symbol (TEAM-usdt, etc.)</td>
+</tr>
+<tr>
+<td>resolution</td>
+<td>string</td>
+<td>Required</td>
+<td>Time interval resolution (1D, 60, etc.)</td>
+</tr>
+<tr>
+<td>from</td>
+<td>string</td>
+<td>Required</td>
+<td>Beginning UNIX timestamp</td>
+</tr>
+<tr>
+<td>to</td>
+<td>string</td>
+<td>Required</td>
+<td>Ending UNIX timestamp</td>
+</tr>
+</tbody></table>
+<h2 id='symbols'>Symbols</h2>
+<blockquote>
+<p>Request</p>
+</blockquote>
+<div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.team-exchange.com/v2/udf/symbols?symbol=TEAM-usdt"</span>
+</code></pre></div>
+<blockquote>
+<p>Response</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Exchange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"ticker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"exchange"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Exchange"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"has_intraday"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"has_daily"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"has_weekly_and_monthly"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24x7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"regular_session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24x7"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"pricescale"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"volume_precision"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"has_empty_bars"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves system a TradingView UDF symbol.</p>
+<h3 id='http-request-26'>HTTP Request</h3>
+<p><code>GET https://api.team-exchange.com/v2/udf/symbols?symbol=${symbol}</code></p>
+<h3 id='parameters-17'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>symbol</td>
+<td>string</td>
+<td>Required</td>
+<td>The currency pair symbol (TEAM-usdt, etc.)</td>
+</tr>
+</tbody></table>
+<h1 id='websocket'>Websocket</h1>
+<p>Connection to public and private channels are available through the path <code>https://api.team-exchange.com/stream</code>. Team Exchange Exchanges can be connected to using any websocket libraries. For this documentation, we will use the library <a href="'https://github.com/websockets/ws'"><code>ws</code></a>.</p>
+<h2 id='connecting'>Connecting</h2>
+<blockquote>
+<p>Connection</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+    <span class="kd">const</span> <span class="nx">WebSocket</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">ws</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="c1">// Public</span>
+    <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="dl">'</span><span class="s1">https://api.team-exchange.com/stream</span><span class="dl">'</span><span class="p">);</span>
+
+    <span class="c1">// Private Bearer</span>
+    <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s2">`https://api.team-exchange.com/stream?authorization=Bearer%20</span><span class="p">${</span><span class="nx">TOKEN</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+    <span class="c1">// Private HMAC</span>
+    <span class="kd">const</span> <span class="nx">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WebSocket</span><span class="p">(</span><span class="s2">`https://api.team-exchange.com/stream?api-key=</span><span class="p">${</span><span class="nx">API</span><span class="o">-</span><span class="nx">KEY</span><span class="p">}</span><span class="s2">&amp;api-signature=</span><span class="p">${</span><span class="nx">API</span><span class="o">-</span><span class="nx">SIGNATURE</span><span class="p">}</span><span class="s2">&amp;api-expires=</span><span class="p">${</span><span class="nx">API</span><span class="o">-</span><span class="nx">EXPIRES</span><span class="p">}</span><span class="s2">`</span><span class="p">);</span>
+
+    <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="c1">// Ping message to keep connection alive</span>
+        <span class="nx">setInterval</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span>
+                <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+                    <span class="na">op</span><span class="p">:</span> <span class="dl">'</span><span class="s1">ping</span><span class="dl">'</span>
+                <span class="p">})</span>
+            <span class="p">)</span>
+        <span class="p">})</span>
+    <span class="p">},</span> <span class="mi">30000</span><span class="p">);</span>
+
+</code></pre></div>
+<p>Connection for public events does not require authentication while private events do. Users can use Bearer or HMAC authentication.
+For HMAC, the method is <code>CONNECT</code> and the path is <code>/stream</code>. Refer to the <a href="'#Authentication'">Authentication</a> section for more information on HMAC-SHA256.</p>
+
+<p>Websocket connections will disconnect if a message is not sent within one minute. To keep a connection alive, you can sent a <code>ping</code> message every ~30 seconds.</p>
+<h3 id='path'>PATH</h3>
+<p><code>https://api.team-exchange.com/stream</code></p>
+<h3 id='parameters-18'>PARAMETERS</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required/Optional</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>authorization (<em>Bearer</em>)</td>
+<td>string</td>
+<td>Optional</td>
+<td>A bearer token required to subscribe to private events.</td>
+</tr>
+<tr>
+<td>api-key (<em>HMAC</em>)</td>
+<td>string</td>
+<td>Optional</td>
+<td>Your exchange api-key</td>
+</tr>
+<tr>
+<td>api-signature (<em>HMAC</em>)</td>
+<td>string</td>
+<td>Optional</td>
+<td>An api-signature created using HMAC SHA256</td>
+</tr>
+<tr>
+<td>api-expires (<em>HMAC</em>)</td>
+<td>string</td>
+<td>Optional</td>
+<td>Expiry time of request</td>
+</tr>
+</tbody></table>
+<h2 id='sending-receiving-messages'>Sending/Receiving Messages</h2>
+<blockquote>
+<p>Connection</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span>
+        <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="na">op</span><span class="p">:</span> <span class="nx">OPERATION</span><span class="p">,</span>
+            <span class="na">args</span><span class="p">:</span> <span class="p">[</span><span class="nx">EVENTS</span><span class="p">]</span>
+        <span class="p">})</span>
+    <span class="p">);</span>
+
+    <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="nx">data</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+    <span class="p">})</span>
+
+</code></pre></div><h3 id='operations'>Operations</h3>
+<table><thead>
+<tr>
+<th>Operation</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>subscribe</td>
+<td>Subscribe to events.</td>
+</tr>
+<tr>
+<td>unsubscribe</td>
+<td>Unsubscribe to events.</td>
+</tr>
+<tr>
+<td>ping</td>
+<td>Ping-pong message for keeping connections alive.</td>
+</tr>
+</tbody></table>
+<h3 id='events'>Events</h3>
+<table><thead>
+<tr>
+<th>Events</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderbook</td>
+<td>Public event for orderbook updates.</td>
+</tr>
+<tr>
+<td>trades</td>
+<td>Public event for trade updates.</td>
+</tr>
+<tr>
+<td>order</td>
+<td>Private event for user order updates.</td>
+</tr>
+<tr>
+<td>wallet</td>
+<td>Private even for wallet balance updates.</td>
+</tr>
+</tbody></table>
+<h2 id='public-events'>Public Events</h2>
+<blockquote>
+<p>Connection</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="c1">// Subscribe</span>
+        <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span>
+            <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+                <span class="na">op</span><span class="p">:</span> <span class="dl">'</span><span class="s1">subscribe</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">args</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">orderbook</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">trades</span><span class="dl">'</span><span class="p">]</span>
+            <span class="p">})</span>
+        <span class="p">);</span>
+
+        <span class="c1">// On message</span>
+        <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+        <span class="p">});</span>
+
+        <span class="c1">// Unsubscribe</span>
+        <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span>
+            <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+                <span class="na">op</span><span class="p">:</span> <span class="dl">'</span><span class="s1">unsubscribe</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">args</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">orderbook</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">trades</span><span class="dl">'</span><span class="p">]</span>
+            <span class="p">})</span>
+        <span class="p">);</span>
+    <span class="p">})</span>
+
+</code></pre></div><h3 id='events-2'>EVENTS</h3>
+<p>The public events you can subscribe to are:</p>
+
+<table><thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderbook</td>
+<td>Notification with orderbook symbol and data update. To subscribe to a specific pair, you can pass the pair after a colon. Ex: <code>orderbook:TEAM-usdt</code>.</td>
+</tr>
+<tr>
+<td>trades</td>
+<td>Notification with trade data. To subscribe to a specific pair, you can pass the pair after a colon. Ex: <code>trades:TEAM-usdt</code>.</td>
+</tr>
+</tbody></table>
+<h2 id='public-updates'>Public Updates</h2>
+<blockquote>
+<p>orderbook</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"orderbook"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partial"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"bids"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="mf">0.1</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">],</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"asks"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w">
+            </span><span class="err">...</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-15T06:45:27.766Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1608015328</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div>
+<blockquote>
+<p>trades</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"trade"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partial"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.012</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">300</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-15T07:25:28.887Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1608015328</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h2 id='private-events'>Private Events</h2>
+<blockquote>
+<p>Connection</p>
+</blockquote>
+<div class="highlight"><pre class="highlight javascript tab-javascript"><code>
+    <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">open</span><span class="dl">'</span><span class="p">,</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="c1">// Subscribe</span>
+        <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span>
+            <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+                <span class="na">op</span><span class="p">:</span> <span class="dl">'</span><span class="s1">subscribe</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">args</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">order</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wallet</span><span class="dl">'</span><span class="p">]</span>
+            <span class="p">})</span>
+        <span class="p">);</span>
+
+        <span class="c1">// On message</span>
+        <span class="nx">client</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">message</span><span class="dl">'</span><span class="p">,</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">data</span><span class="p">));</span>
+        <span class="p">});</span>
+
+        <span class="c1">// Unsubscribe</span>
+        <span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span>
+            <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+                <span class="na">op</span><span class="p">:</span> <span class="dl">'</span><span class="s1">unsubscribe</span><span class="dl">'</span><span class="p">,</span>
+                <span class="na">args</span><span class="p">:</span> <span class="p">[</span><span class="dl">'</span><span class="s1">order</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wallet</span><span class="dl">'</span><span class="p">]</span>
+            <span class="p">})</span>
+        <span class="p">);</span>
+    <span class="p">})</span>
+
+</code></pre></div><h3 id='events-3'>EVENTS</h3>
+<p>The private events you can subscribe to are:</p>
+
+<table><thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order</td>
+<td>Notifications for newly created orders and order updates.</td>
+</tr>
+<tr>
+<td>wallet</td>
+<td>Notifications for balance updates.</td>
+</tr>
+</tbody></table>
+<h2 id='private-updates'>Private Updates</h2>
+<blockquote>
+<p>order</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partial"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7d3d9545-b7e6-4e7f-84a0-a39efa4cb173"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"filled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"fee_structure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-30T07:45:43.819Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1608022610</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"insert"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7d3d9545-b7e6-4e7f-84a0-a39efa4cb173"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"filled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"fee_structure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-30T07:45:43.819Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-15T08:56:45.066Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1608022610</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"insert"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7d3d9545-b7e6-4e7f-84a0-a39efa4cb173"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"buy"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM-usdt"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"limit"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"size"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"filled"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"stop"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"new"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fee_coin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEAM"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="nl">"fee_structure"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"maker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="p">,</span><span class="w">
+                </span><span class="nl">"taker"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-11-30T07:45:43.819Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-15T08:56:45.066Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"created_by"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="err">...</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1608022610</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='order-status-and-action'>Order status and action</h3>
+<p>The <code>status</code> of the order can be <code>new</code>, <code>pfilled</code>, <code>filled</code>, and <code>canceled</code>.</p>
+
+<p>The <code>action</code> of the data determines what caused it to happen. All three are explained below:</p>
+
+<table><thead>
+<tr>
+<th>Action</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>partial</td>
+<td>All previous and current orders. Is the first order data received when connecting. Max: 50. Descending order.</td>
+</tr>
+<tr>
+<td>insert</td>
+<td>When user&#39;s order is added. The status of the order can be either new, pfilled, or filled.</td>
+</tr>
+<tr>
+<td>update</td>
+<td>When user&#39;s order status is updated. Status can be pfilled, filled, and canceled.</td>
+</tr>
+</tbody></table>
+
+<blockquote>
+<p>wallet</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+    </span><span class="nl">"topic"</span><span class="p">:</span><span class="w"> </span><span class="s2">"wallet"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"action"</span><span class="p">:</span><span class="w"> </span><span class="s2">"partial"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"user_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"usdt_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"usdt_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TEAM_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"TEAM_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"xmr_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"xmr_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"btc_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"btc_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"eth_balance"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"eth_available"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="err">...</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-12-15T08:41:24.048Z"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"time"</span><span class="p">:</span><span class="w"> </span><span class="mi">1608021684</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h1 id='errors'>Errors</h1>
+<aside class="dangers">
+List of http request errors you might get from HollaEx.
+</aside>
+
+<p>The HollaEx API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>403</td>
+<td>Unauthorized/Forbidden -- Your api token is not valid.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The specified request could not be found.</td>
+</tr>
+<tr>
+<td>405</td>
+<td>Method Not Allowed -- You tried to access a request with an invalid method.</td>
+</tr>
+<tr>
+<td>410</td>
+<td>Gone -- The request has been removed from our servers.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- You&#39;re requesting too many requests! Slow down!</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Internal Server Error -- We had a problem with our server. Try again later.</td>
+</tr>
+<tr>
+<td>503</td>
+<td>Service Unavailable -- We&#39;re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
